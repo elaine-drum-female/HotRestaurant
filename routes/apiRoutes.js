@@ -32,6 +32,12 @@ module.exports = function(app) {
         }
       });
     
-
-
-}
+      app.post("/api/clear", function(req, res) {
+        // Empty out the arrays of data
+        tableData.length = [];
+        waitListData.length = [];
+    
+        res.json({ ok: true });
+      });
+    };
+    
